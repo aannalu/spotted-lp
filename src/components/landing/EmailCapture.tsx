@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const FN_URL =
-  "https://kmxnfnffaaztywuijjvo.supabase.co/functions/v1/send-waitlist-welcome";
+  "https://kmxnfnffaaztywuijjvo.supabase.co/functions/v1/send-signup-link";
 
 function fbqExists() {
   return typeof window !== "undefined" && (window as any).fbq;
@@ -38,7 +38,7 @@ type Props = {
 export default function EmailCapture({
   variant = "full",
   withId = true,
-  ctaLabel = "Garantir meu acesso VIP",
+  ctaLabel = "Acessar agora (grátis)",
   className = "",
 }: Props) {
   const [email, setEmail] = useState("");
@@ -110,9 +110,9 @@ export default function EmailCapture({
       const res = await fetch(FN_URL, {
         method: "POST",
         headers: {
-  "Content-Type": "application/json",
-  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtteG5mbmZmYWF6dHl3dWlqanZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU4OTgzNDAsImV4cCI6MjA3MTQ3NDM0MH0.209vsDacXrQSWVrkXsMyqGFwCyiKYD_0qVJG4eXcKVw"
-},
+          "Content-Type": "application/json",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtteG5mbmZmYWF6dHl3dWlqanZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU4OTgzNDAsImV4cCI6MjA3MTQ3NDM0MH0.209vsDacXrQSWVrkXsMyqGFwCyiKYD_0qVJG4eXcKVw"
+        },
         body: JSON.stringify({
           email: normalized,
           utm: Object.fromEntries(new URLSearchParams(window.location.search)),
@@ -121,8 +121,18 @@ export default function EmailCapture({
       });
 
       const json = (await res.json().catch(() => ({}))) as any;
+      
+      // ✅ NOVO: Se user já existe, redireciona pro login
+      if (json.action === 'redirect_to_login') {
+        setStatus("✅ Você já tem conta! Redirecionando pro login...");
+        setTimeout(() => {
+          window.location.href = "https://appspotted.com.br/#/login";
+        }, 2000);
+        return;
+      }
+
       if (!res.ok) {
-        console.error("send-waitlist-welcome error:", json);
+        console.error("send-signup-link error:", json);
         setStatus("❌ Erro ao enviar o e-mail. Tente novamente.");
         if (fbqExists()) {
           (window as any).fbq("trackCustom", "SignupError", {
@@ -144,7 +154,7 @@ export default function EmailCapture({
         });
       }
 
-      setStatus("✅ Você tá na lista! Confira seu e-mail 🎉");
+      setStatus("✅ Link de acesso enviado! Confere seu email 📧");
       setEmail("");
       setConsent(false);
 
@@ -177,13 +187,13 @@ export default function EmailCapture({
         {!isSimple && (
           <>
             <h2 className="font-bold text-[32px] sm:text-[40px] text-[#F5F5F5]">
-              Vagas limitadas: garanta seu acesso antecipado
+              Pronto pra descobrir os melhores lugares de SP?
             </h2>
             <p className="mt-4 text-lg text-[#A1A1AA]">
               <span className="text-[#00FFB2] font-semibold">
-                Bônus pra quem entrar agora:
+                84 lugares curados
               </span>{" "}
-              badge de Early Adopter no app + voz ativa na construção do produto
+              esperando por você. Acesso em até 60 minutos por email.
             </p>
           </>
         )}
@@ -266,7 +276,7 @@ export default function EmailCapture({
 
         {!isSimple && (
           <p className="mt-3 text-sm text-[#A1A1AA]">
-            Não enviamos spam, só o melhor de SP ✨
+            100% grátis pra sempre. Não enviamos spam ✨
           </p>
         )}
 

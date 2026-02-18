@@ -5,7 +5,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "É pago?",
-    a: "Grátis pra sempre! Alguns recursos premium virão no futuro (tipo relatórios personalizados de vibe), mas a base é 100% free.",
+    a: "Grátis pra sempre! A gente ganha com parcerias com os lugares, não com você.",
   },
   {
     q: "Funciona fora de São Paulo?",
@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "Como vocês escolhem os lugares?",
-    a: "Combinação de curadoria manual (a gente vive SP a vida toda e testa TUDO) + algoritmo que aprende com o seu comportamento.",
+    a: "Combinação de curadoria manual (a gente vive SP a vida toda e testa TUDO) + algoritmo que aprende com o seu comportamento. Nada de lugar aleatório só porque pagou anúncio.",
   },
   {
     q: "Meus dados ficam seguros?",
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "Quando lança?",
-    a: "Estamos finalizando os últimos ajustes. Entre na lista VIP pra ser avisado PRIMEIRO e ganhar badge de Early Adopter no lançamento. Vagas limitadas!",
+    a: "Já lançou! Cadastra agora e em até 60 minutos você recebe o link de acesso por email. 84 lugares esperando por você.",
   },
   {
     q: "Preciso conectar minhas redes sociais?",
@@ -41,7 +41,6 @@ export default function FAQ() {
   return (
     <section className="relative px-6 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl text-center">
-        {/* Título e subtítulo */}
         <h2 className="font-bold text-[32px] sm:text-[40px] text-[#F5F5F5]">
           Perguntas frequentes
         </h2>
@@ -49,7 +48,6 @@ export default function FAQ() {
           Se a sua dúvida não tá aqui, manda DM no @spotted.sp
         </p>
 
-        {/* FAQs */}
         <div className="mt-12 max-w-3xl mx-auto space-y-3">
           {faqs.map((faq, i) => (
             <FAQItem key={i} question={faq.q} answer={faq.a} />

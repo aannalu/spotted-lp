@@ -2,10 +2,10 @@
 
 const validationSignals = [
   {
-    emoji: "👥",
-    stat: "1.200+",
-    label: "Paulistanos na lista VIP",
-    desc: "A galera já tá preparada pro lançamento",
+    emoji: "🏙️",
+    stat: "84",
+    label: "lugares curados",
+    desc: "Do café da manhã ao drink da madrugada",
   },
   {
     emoji: "📍",
@@ -24,11 +24,11 @@ const validationSignals = [
 const userQuestions = [
   {
     question: "Quando lança?",
-    answer: "Em breve! Entre na lista pra ser avisado primeiro.",
+    answer: "Já lançou! Cadastra agora e em até 60 minutos você recebe o link por email.",
   },
   {
     question: "É pago?",
-    answer: "Grátis pra sempre. Recursos premium opcional depois.",
+    answer: "Grátis pra sempre. A gente ganha com parcerias com os lugares, não com você.",
   },
   {
     question: "Funciona fora de SP?",
@@ -38,14 +38,13 @@ const userQuestions = [
 
 export default function SocialProof() {
   return (
-    <section id="social-proof" className="relative px-6 py-20 sm:py-28">
+    <section className="relative px-6 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl text-center">
-        {/* Título e subtítulo */}
         <h2 className="font-bold text-[32px] sm:text-[40px] text-[#F5F5F5]">
-          A galera tá animada
+          Por que o Spotted funciona?
         </h2>
         <p className="mt-4 text-lg text-[#A1A1AA] max-w-3xl mx-auto">
-          E você ainda vai ficar de fora?
+          Curadoria manual + tecnologia de match = descoberta sem erro
         </p>
 
         {/* Stats de validação */}
@@ -55,7 +54,7 @@ export default function SocialProof() {
           ))}
         </div>
 
-        {/* Perguntas frequentes (social proof disfarçada) */}
+        {/* Perguntas frequentes */}
         <div className="max-w-3xl mx-auto">
           <h3 className="text-[#F5F5F5] text-2xl font-bold text-center mb-8">
             O que a galera tá perguntando
