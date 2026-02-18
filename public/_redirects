@@ -1,0 +1,3 @@
+/api/subscribe  https://kmxnfnffaaztywuijjvo.functions.supabase.co/send-confirmation-email  200
+/api/confirm     https://kmxnfnffaaztywuijjvo.functions.supabase.co/confirm-lead            200
+/*               /index.html                                                                   200

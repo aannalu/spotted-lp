@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0D0D0D" />
+  <title>Confirmação concluída | Spotted</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --preto:#0D0D0D; --branco:#F5F5F5; --ciano:#3FE0F5; --roxo:#6A0DAD;
+      --neon:#00FFB2; --cinza:#A1A1AA; --ink:#001417;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; min-height:100dvh; color:var(--branco);
+      font-family:"Space Grotesk",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      background:
+        radial-gradient(1400px 700px at 10% -10%, rgba(138,43,226,0.55), transparent 70%),
+        radial-gradient(1000px 500px at 90% 20%, rgba(106,13,173,0.45), transparent 65%),
+        radial-gradient(800px 400px at 50% 95%, rgba(75,0,130,0.35), transparent 60%),
+        linear-gradient(180deg, #3A0B63 0%, #160526 100%);
+      display:grid; place-items:center; padding:24px;
+    }
+    .shell{width:min(980px,100%); padding:0 8px}
+    .card{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:24px; backdrop-filter:blur(12px);
+      box-shadow:0 10px 40px rgba(0,0,0,.45);
+      padding:28px 28px 30px;
+    }
+    .logo{width:120px; height:auto; opacity:.98}
+    header{display:flex; align-items:center; gap:16px; margin:14px 0 6px}
+    .ok{
+      display:grid; place-items:center; width:60px; height:60px; border-radius:50%;
+      background:rgba(0,255,178,.10); border:1px solid rgba(0,255,178,.35); color:var(--neon);
+      box-shadow:0 0 30px rgba(0,255,178,.25), inset 0 0 12px rgba(0,255,178,.12);
+      font-size:28px; font-weight:700;
+    }
+    h1{margin:0; font-size:34px; line-height:1.15; font-weight:700}
+    p.lead{margin:10px 0 0; color:var(--cinza); font-size:18px; line-height:1.65}
+    ul{margin:18px 0 8px; padding-left:0; list-style:none}
+    li{margin:10px 0; font-size:16px; display:flex; gap:10px; align-items:flex-start}
+    li .e{width:22px; text-align:center; flex:0 0 22px}
+    .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:22px}
+    .btn{
+      appearance:none; border:0; cursor:pointer; text-decoration:none;
+      padding:14px 22px; border-radius:9999px; font-weight:600; font-size:16px;
+      display:inline-flex; align-items:center; gap:10px; transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{background:var(--ciano); color:var(--ink);}
+    .btn-primary:hover{box-shadow:0 8px 24px rgba(63,224,245,.35)}
+    .btn-outline{background:transparent; color:var(--ciano); border:1.5px solid var(--ciano)}
+    .btn-outline:hover{box-shadow:0 8px 24px rgba(63,224,245,.20)}
+    .footer{margin-top:26px; font-size:14px; color:var(--cinza)}
+    .footer a{color:var(--ciano); text-decoration:underline}
+    @media (max-width:680px){ h1{font-size:28px} p.lead{font-size:16px} }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <main class="card" role="main">
+      <img class="logo" src="https://kmxnfnffaaztywuijjvo.supabase.co/storage/v1/object/public/assets/logo-email.png" alt="Spotted">
+      <header>
+        <div class="ok">✓</div>
+        <h1>Confirmação concluída</h1>
+      </header>
+
+      <p class="lead">
+        Sua inscrição foi validada com sucesso. A partir de agora, você está na frente para experimentar o Spotted antes de todo mundo.
+      </p>
+
+      <ul>
+        <li><span class="e">✨</span><span>Acesso antecipado ao app Spotted</span></li>
+        <li><span class="e">🤖</span><span>Recomendações feitas pela IA, para você</span></li>
+        <li><span class="e">📍</span><span>Curadoria local feita para São Paulo</span></li>
+      </ul>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="/">Voltar para a Home</a>
+        <a class="btn btn-outline" target="_blank" rel="noopener"
+           href="https://wa.me/?text=Vem%20pro%20Spotted!%20Descubra%20rol%C3%AA%2C%20eventos%20e%20lugares%20em%20SP%20com%20IA%20%E2%9A%A1%EF%B8%8F%20https%3A%2F%2Fwww.appspotted.com.br%2F?utm_source=confirmado&utm_medium=whatsapp&utm_campaign=referral_v1">
+          Convidar no WhatsApp
+        </a>
+      </div>
+
+      <div class="footer">
+        Dúvidas? Fala com a gente: <a href="mailto:contato@appspotted.com.br">contato@appspotted.com.br</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
