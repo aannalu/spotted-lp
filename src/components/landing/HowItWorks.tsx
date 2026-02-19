@@ -63,13 +63,13 @@ function StepCard({
     <div className="relative">
       {/* Screenshot do app */}
       {screenshot && (
-        <div className="mb-6 rounded-2xl overflow-hidden border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,.4)] group">
-          <img
-            src={screenshot}
-            alt={title}
-            className="w-full h-auto"
-            loading="lazy"
-          />
+        <div className="mb-6 rounded-2xl overflow-hidden border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,.4)] group h-[470px]">
+  <img
+    src={screenshot}
+    alt={title}
+    className="w-full h-full object-cover object-bottom"
+    loading="lazy"
+  />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
       )}
