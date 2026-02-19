@@ -4,7 +4,7 @@ const steps = [
   {
     step: "1",
     title: "Você conta o que curte",
-    desc: "3 minutos pra contar sua vibe. Seleciona músicas e tipos de lugar favoritos.",
+    desc: "3 minutos pra contar sua vibe. Seleciona músicas, tipos de lugar e culinária favoritos.",
     screenshot: "/images/onboarding-music.webp",
   },
   {
@@ -15,8 +15,8 @@ const steps = [
   },
   {
     step: "3",
-    title: "Rolês prontos pra você",
-    desc: "Filtra por 'perto de mim + aberto agora' e sai sem erro. Simples assim.",
+    title: "Saiba o que importa.",
+    desc: "Tudo o que você precisa saber para escolher o seu próximo destino. Simples assim.",
     screenshot: "/images/role-detail.webp",
   },
 ];
