@@ -154,7 +154,7 @@ export default function EmailCapture({
         });
       }
 
-      setStatus("✅ Link de acesso enviado! Confere seu email 📧");
+      setStatus("✅ Código enviado! Confere seu email 📧");
       setEmail("");
       setConsent(false);
 
