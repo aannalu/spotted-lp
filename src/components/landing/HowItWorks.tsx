@@ -6,18 +6,21 @@ const steps = [
     title: "Você conta o que curte",
     desc: "3 minutos pra contar sua vibe. Seleciona músicas, tipos de lugar e culinária favoritos.",
     screenshot: "/images/onboarding-music.webp",
+    objectPosition: "top",
   },
   {
     step: "2",
     title: "A IA aprende com você",
     desc: "O algoritmo analisa suas escolhas e rankeia lugares por compatibilidade com você.",
     screenshot: "/images/feed-grid.webp",
+    objectPosition: "top",
   },
   {
     step: "3",
-    title: "Saiba o que importa.",
+    title: "Saiba o que importa",
     desc: "Tudo o que você precisa saber para escolher o seu próximo destino. Simples assim.",
     screenshot: "/images/role-detail.webp",
+    objectPosition: "top",
   },
 ];
 
@@ -53,33 +56,34 @@ function StepCard({
   title,
   desc,
   screenshot,
+  objectPosition,
 }: {
   step: string;
   title: string;
   desc: string;
   screenshot: string;
+  objectPosition?: string;
 }) {
   return (
     <div className="relative">
-      {/* Screenshot do app */}
       {screenshot && (
         <div className="mb-6 rounded-2xl overflow-hidden border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,.4)] group h-[490px]">
-  <img
-    src={screenshot}
-    alt={title}
-    className="w-full h-full object-cover object-top"
-    loading="lazy"
-  />
+          <img
+            src={screenshot}
+            alt={title}
+            className="w-full h-full object-cover"
+            style={{ objectPosition: objectPosition ?? "top" }}
+            loading="lazy"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
       )}
 
-      {/* ✅ SÓ A BADGE "Passo X" - SEM CÍRCULO */}
       <div>
         <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-semibold border border-[#00FFB2]/30 bg-[#00FFB2]/10 mb-3">
           <span className="text-[#00FFB2]">Passo {step}</span>
         </div>
-        
+
         <h3 className="text-[#F5F5F5] text-lg md:text-xl font-semibold">
           {title}
         </h3>
