@@ -63,7 +63,7 @@ function StepCard({
     <div className="relative">
       {/* Screenshot do app */}
       {screenshot && (
-        <div className="mb-6 rounded-2xl overflow-hidden border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,.4)] group h-96">
+        <div className="mb-6 rounded-2xl overflow-hidden border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,.4)] group h-[430px]">
   <img
     src={screenshot}
     alt={title}
