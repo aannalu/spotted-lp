@@ -20,7 +20,7 @@ const steps = [
     title: "Saiba o que importa",
     desc: "Tudo o que você precisa saber para escolher o seu próximo destino. Simples assim.",
     screenshot: "/images/role-detail.webp",
-    objectPosition: "top",
+    objectPosition: "center 20%",
   },
 ];
 
