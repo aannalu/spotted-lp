@@ -133,14 +133,12 @@ export default function EmailCapture({
 
       if (!res.ok) {
         console.error("send-signup-link error:", json);
-        setStatus("❌ Erro ao enviar o e-mail. Tente novamente.");
-        if (fbqExists()) {
-          (window as any).fbq("trackCustom", "SignupError", {
-            form_id: "email_capture",
-            reason: String(json?.error || res.status),
-            location: "landing",
-            ...getUTMs(),
-          });
+        
+        // ✅ Mensagem específica pra domínio inválido
+        if (res.status === 400 && json?.error?.includes('Domínio')) {
+          setStatus("⚠️ Esse email não parece válido. Confere se digitou certinho?");
+        } else {
+          setStatus("❌ Erro ao enviar o e-mail. Tente novamente.");
         }
         return;
       }
