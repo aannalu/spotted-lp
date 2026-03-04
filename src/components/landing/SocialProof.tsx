@@ -3,7 +3,7 @@
 const validationSignals = [
   {
     emoji: "🏙️",
-    stat: "84",
+    stat: "+100",
     label: "lugares curados",
     desc: "Do café da manhã ao drink da madrugada",
   },

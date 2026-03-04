@@ -189,7 +189,7 @@ export default function EmailCapture({
             </h2>
             <p className="mt-4 text-lg text-[#A1A1AA]">
               <span className="text-[#00FFB2] font-semibold">
-                84 lugares curados
+                +100 lugares curados
               </span>{" "}
               esperando por você. Acesso em até 60 minutos por email.
             </p>

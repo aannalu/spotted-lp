@@ -25,7 +25,7 @@ export default function Hero() {
           </h1>
           
           <p className="mt-4 text-[16px] sm:text-[18px] md:text-[20px] text-[#F5F5F5] px-2">
-            <span className="text-[#00FFB2] font-semibold">84 lugares curados a dedo</span>{" "}
+            <span className="text-[#00FFB2] font-semibold">+100 lugares curados a dedo</span>{" "}
             + algoritmo de match = do café da manhã ao drink da madrugada.{" "}
             <span className="text-[#3FE0F5] font-semibold">
               Acesso imediato e grátis pra sempre.
