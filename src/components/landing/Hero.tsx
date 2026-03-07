@@ -25,7 +25,7 @@ export default function Hero() {
           </h1>
           
           <p className="mt-4 text-[16px] sm:text-[18px] md:text-[20px] text-[#F5F5F5] px-2">
-            <span className="text-[#00FFB2] font-semibold">+100 lugares curados a dedo</span>{" "}
+            <span className="text-[#00FFB2] font-semibold">+150 lugares curados a dedo</span>{" "}
             + algoritmo de match = do café da manhã ao drink da madrugada.{" "}
             <span className="text-[#3FE0F5] font-semibold">
               Acesso imediato e grátis pra sempre.
@@ -45,7 +45,7 @@ export default function Hero() {
             </div>
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-3 py-1.5 text-sm text-[#F5F5F5] backdrop-blur-md">
               <span className="text-[#3FE0F5]">🏙️</span>
-              <span>84 lugares curados</span>
+              <span>+150 lugares curados</span>
             </div>
           </div>
           
@@ -58,7 +58,7 @@ export default function Hero() {
           
           <p className="mt-3 text-sm text-[#E5E5E5] px-4">
             <span className="text-[#00FFB2] font-semibold">100% grátis pra sempre.</span>{" "}
-            Acesso imediato em até 60 minutos (link por email) 🚀
+            Link chega na hora. Acesso imediato. (link por email) 🚀
           </p>
         </div>
       </div>
