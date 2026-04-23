@@ -1,12 +1,21 @@
 // supabase/functions/send-welcome/index.ts
 // Envia e-mail de boas-vindas via Resend
 // Requer secrets: RESEND_API_KEY, FROM_EMAIL (e opcional TEMPLATE_URL)
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type"
 };
-serve(async (req)=>{
+type DenoRuntime = {
+  env: {
+    get: (key: string)=>string | undefined;
+  };
+  serve: (handler: (req: Request)=>Response | Promise<Response>)=>unknown;
+};
+const deno = (globalThis as {
+  Deno?: DenoRuntime;
+}).Deno;
+if (!deno) throw new Error("Deno runtime is required for this function.");
+deno.serve(async (req)=>{
   if (req.method === "OPTIONS") {
     // Preflight CORS
     return new Response("ok", {
@@ -27,9 +36,9 @@ serve(async (req)=>{
         }
       });
     }
-    const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-    const FROM_EMAIL = Deno.env.get("FROM_EMAIL") ?? "Spotted <no-reply@resend.dev>";
-    const TEMPLATE_URL = Deno.env.get("TEMPLATE_URL"); // opcional: HTML público no Storage
+    const RESEND_API_KEY = deno.env.get("RESEND_API_KEY");
+    const FROM_EMAIL = deno.env.get("FROM_EMAIL") ?? "Spotted <no-reply@resend.dev>";
+    const TEMPLATE_URL = deno.env.get("TEMPLATE_URL"); // opcional: HTML público no Storage
     if (!RESEND_API_KEY) {
       return new Response(JSON.stringify({
         ok: false,

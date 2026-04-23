@@ -1,6 +1,5 @@
 // src/components/landing/Hero.tsx
 
-import React from "react";
 import EmailCapture from "./EmailCapture";
 
 export default function Hero() {
