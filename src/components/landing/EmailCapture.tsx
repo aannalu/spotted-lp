@@ -159,7 +159,10 @@ export default function EmailCapture({
       }
 
       (window as any).gtag?.("event", "lead_submit", { method: "lp" });
-      (window as any).posthog?.capture?.("lead_submitted", { source: "lp" });
+      (window as any).posthog?.capture?.("lead_submitted", { 
+        source: "lp",
+        ...getUTMs(),
+      });
 
       setState({ kind: "success", email: normalizedEmail });
 
